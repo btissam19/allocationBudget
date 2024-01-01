@@ -7,27 +7,32 @@ const ExpenseItem = (props) => {
     const { dispatch, currency } = useContextcustum();
 
     const handleDeleteItem = () => {
-        const item = {
-            name: props.name,
-        };
 
         dispatch({
             type: 'DELETE_ITEM',
-            payload: item,
+            payload:props.id, 
         });
     };
 
     const handleAddTen = (name) => {
+        const expense = {
+            name: name,
+            cost: 10,
+          }
         dispatch({
-            type: 'ADD_TEN',
-            payload: name,
+            type: 'ADD_COST',
+            payload: expense,
         });
     };
 
     const handleRemoveTen = (name) => {
+        const expense = {
+            name: name,
+            cost: 10,
+          }
         dispatch({
-            type: 'RED_TEN',
-            payload: name,
+            type: 'RED_COST',
+            payload: expense,
         });
     };
 

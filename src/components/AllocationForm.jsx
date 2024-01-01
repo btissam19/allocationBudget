@@ -6,25 +6,24 @@ function AllocationForm() {
     const [action,setAction]=useState('');
     const [cost,setCost]=useState('');
     const handelSubmit = (e) => {
-        if (cost > remaining) {
-          alert(`The value cannot exceed remaining funds ${currency}` + remaining);
-          setCost('');
-          return;
-        }
-      
         const item = {
           name: department,
           cost: parseInt(cost),
         };
       
-        if (action === "Add") {
+        if (action === "Reduce") {
           dispatch({
-            type: "ADD_COST",
+            type: "RED_COST",
             payload: item,
           });
         } else {
+          if (cost > remaining) {
+            alert(`The value cannot exceed remaining funds ${currency}` + remaining);
+            setCost('');
+            return;
+          }
           dispatch({
-            type: 'RED_TEN',
+            type: 'ADD_COST',
             payload: item,
           });
         }
