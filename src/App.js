@@ -1,5 +1,7 @@
 import React from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import '@popperjs/core/dist/umd/popper.min.js'; // Import Popper.js before Bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
 import { AppcontextProvider } from './contexts/AppContext'
 import Budget from './components/Budget'
 import ExpenseTotal from './components/TotalSpent'
